@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
             case "Numbers":
                 countResult = TextMetricCounter.countNumbers(inputText);
                 break;
+            case "UPPERCASE Words":
+                countResult = TextMetricCounter.countUppercaseWords(inputText);
+                break;
             default:
                 break;
 

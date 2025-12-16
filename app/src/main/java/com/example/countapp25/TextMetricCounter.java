@@ -10,6 +10,7 @@ public class TextMetricCounter {
     /**
      * Counts sentences using regex split on sentence-ending punctuation
      * followed by whitespace or end-of-string.
+     *
      * @param text The input text to analyze.
      * @return Number of sentences (approximate).
      */
@@ -24,6 +25,7 @@ public class TextMetricCounter {
 
     /**
      * Counts words using regex split on one or more spaces, commas, or dots.
+     *
      * @param text The input text to analyze.
      * @return Number of words.
      */
@@ -45,6 +47,7 @@ public class TextMetricCounter {
 
     /**
      * Counts total characters (including spaces and punctuation) without regex.
+     *
      * @param text The input text to analyze.
      * @return Number of characters.
      */
@@ -54,6 +57,7 @@ public class TextMetricCounter {
 
     /**
      * Counts individual digits (0-9) without regex, using a loop.
+     *
      * @param text The input text to analyze.
      * @return Number of digits.
      */
@@ -68,5 +72,19 @@ public class TextMetricCounter {
             }
         }
         return digitCount;
+    }
+
+    public static int countUppercaseWords(String text) {
+        if (text == null || text.trim().isEmpty()) return 0;
+        String[] words = text.split("\\s+");
+        int count = 0;
+
+        for (String word : words) {
+            word = word.replaceAll("[^A-Z]", ""); // remove punctuation
+            if (!word.isEmpty() && word.equals(word.toUpperCase())) {
+                count++;
+            }
+        }
+        return count;
     }
 }

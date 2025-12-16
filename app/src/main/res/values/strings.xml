@@ -9,5 +9,6 @@
     <item>Words</item>
     <item>Chars</item>
     <item>Numbers</item>
+    <item>UPPERCASE Words</item>
 </string-array>
 </resources>
